@@ -13,8 +13,8 @@ int n = Convert.ToInt32(Console.ReadLine());
 int[,] array = new int[m, n];
 int[,] newArray = new int[n, m];
 int rows = 0;
-int min = 0;
-int sum=0;
+int min = Int32.MaxValue;
+int sum = 0;
 for (int i = 0; i < array.GetLength(0); i++)
 {
     for (int j = 0; j < array.GetLength(1); j++)
@@ -31,7 +31,7 @@ for (int i = 0; i < array.GetLength(0); i++)
     {
         sum = sum + array[i, j];
     }
-    if (sum < min)
+    if (min > sum)
     {
         min = sum;
         rows++;
